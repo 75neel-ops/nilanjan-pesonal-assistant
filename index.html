@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#142b4a">
+  <meta name="description" content="NilanjanC Personal Assistant — tasks and important reminders.">
+  <title>NilanjanC Personal Assistant</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/icon.svg">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <div class="brand"><img src="./icons/icon.svg" alt="" width="48" height="48"><div><p class="eyebrow">NILANJANC</p><h1>Personal Assistant</h1><p class="sub">Your day, organised.</p></div></div>
+      <button id="installBtn" class="install" hidden>Install app</button>
+    </header>
+    <section class="summary"><div><span id="dateLabel"></span><h2>Good day.</h2><p>Keep important things moving.</p></div><div class="count"><strong id="openCount">0</strong><span>open tasks</span></div></section>
+    <section class="panel">
+      <h2>Quick add</h2>
+      <form id="taskForm"><input id="taskInput" maxlength="180" placeholder="What needs to be done?" required aria-label="New task"><button type="submit">Add task</button></form>
+      <div class="filters"><button data-filter="all" class="selected">All</button><button data-filter="active">Open</button><button data-filter="done">Completed</button></div>
+      <ul id="taskList" class="tasks"></ul>
+      <p id="empty" class="empty">Nothing here yet. Add your first task above.</p>
+    </section>
+    <section class="panel import">
+      <h2>Turn a message into tasks</h2>
+      <p>Paste an email or WhatsApp message. Each non-empty line becomes a task.</p>
+      <textarea id="bulkInput" rows="4" placeholder="Reply to the school&#10;Pay electricity bill&#10;Confirm appointment"></textarea>
+      <button id="importBtn" class="secondary">Add lines as tasks</button>
+    </section>
+    <section class="notice"><strong>Connected services — coming next</strong><p>Gmail monitoring for your two accounts and WhatsApp alerts need secure account authorisation and a backend. They are not connected yet. This app will never ask you to paste an email password here.</p></section>
+    <footer>Made for NilanjanC · Tasks are currently saved on this device.</footer>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
